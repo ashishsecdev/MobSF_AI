@@ -58,6 +58,15 @@ The solution is composed of three Docker services working together:
     ```bash
     docker-compose -f docker-compose-mobsfai.yml up --build
     ```
+    OR
+    ```bash
+    docker-compose -f docker-compose-mobsfai.yml up -d --build
+    ```
+    OR
+    ```bash
+    docker-compose -f docker-compose-mobsfai.yml down -v
+    ```
+    
 
 4.  **Access the Application:**
     Open your browser and navigate to:
@@ -85,7 +94,7 @@ The solution is composed of three Docker services working together:
     -   Ensure the URL contains `/StaticAnalyzer/` or matches the pattern expected by the injected script.
 -   **AI Error / OpenAI Issues?**
     -   Check the logs of the chat container: `docker logs mobsf_chat`.
-    -   Verify your `OPENAI_API_KEY` is valid and has access to the `gpt-4o` model.
+    -   Verify your `OPENAI_API_KEY` is valid and has access to the model.
 -   **MobSF Communication Errors?**
     -   Ensure the `MOBSF_API_KEY` matches in both the `mobsf` and `chat` service definitions in `docker-compose-mobsfai.yml`.
 
